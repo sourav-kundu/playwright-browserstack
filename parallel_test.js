@@ -3,12 +3,17 @@ const { chromium } = require('playwright');
 const main = async (cap) => {
     console.log("Starting test -->", cap['name'])
     const browser = await chromium.connect({
-        wsEndpoint: `wss://souravkundu_ebsAug:7j9LeMsZB73Rsb5S5nDz@cdp.browserstack.com/playwright?caps=${encodeURIComponent(JSON.stringify(cap))}`,
+        wsEndpoint: `wss://YOUR_USERNAME:YOUR_ACCESS_KEY@cdp.browserstack.com/playwright?caps=${encodeURIComponent(JSON.stringify(cap))}`,
     });
     const page = await browser.newPage();
-    await page.goto('https://playwright.dev/');
-    expect(await page.innerText('.navbar__title')).to.equal('Playwright');
-    await new Promise(r => setTimeout(r, 20000));
+    await page.goto('https://www.google.com/ncr');
+    const element = await page.$('[aria-label="Search"]');
+    await element.click();
+    await element.type('BrowserStack');
+    await element.press('Enter');
+    const title = await page.title('');
+    console.log(title);
+    expect(title).to.equal("BrowserStack - Google Search", 'Expected page title is incorrect!');
     await browser.close();
 };
 
