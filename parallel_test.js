@@ -1,0 +1,63 @@
+const expect = require('chai').expect
+const { chromium } = require('playwright');
+const main = async (cap) => {
+    console.log("Starting test -->", cap['name'])
+    const browser = await chromium.connect({
+        wsEndpoint: `wss://souravkundu_ebsAug:7j9LeMsZB73Rsb5S5nDz@cdp.browserstack.com/playwright?caps=${encodeURIComponent(JSON.stringify(cap))}`,
+    });
+    const page = await browser.newPage();
+    await page.goto('https://playwright.dev/');
+    expect(await page.innerText('.navbar__title')).to.equal('Playwright');
+    await new Promise(r => setTimeout(r, 20000));
+    await browser.close();
+};
+
+//  The following capabilities array contains the list of os/browser environments where you want to run your tests. You can choose to alter this list according to your needs
+const capabilities = [
+{
+  	'browser': 'chrome',
+    'os': 'osx',
+    'os_version': 'catalina',
+    'name': 'Chrome on Catalina',
+    'build': 'playwright-build-2'
+},
+{
+  	'browser': 'firefox',
+    'os': 'osx',
+    'os_version': 'catalina',
+    'name': 'Firefox on Catalina',
+    'build': 'playwright-build-2'
+},
+{
+  	'browser': 'safari',
+    'os': 'osx',
+    'os_version': 'catalina',
+    'name': 'Safari on Catalina',
+    'build': 'playwright-build-2'
+},
+{
+    'browser': 'chrome',
+    'os': 'Windows',
+    'os_version': '10',
+    'name': 'Chrome on Win10',
+    'build': 'playwright-build-2'
+},
+{
+    'browser': 'firefox',
+    'os': 'Windows',
+    'os_version': '10',
+    'name': 'Firefox on Win10',
+    'build': 'playwright-build-2'
+},
+{
+    'browser': 'safari',
+    'os': 'Windows',
+    'os_version': '10',
+    'name': 'Safari on Win10',
+    'build': 'playwright-build-2'
+}]
+
+//  The following code loops through the capabilities array defined above and runs your code against each environment that you have specified
+capabilities.forEach(async (cap) => {
+  await main(cap);
+});
