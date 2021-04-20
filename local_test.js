@@ -14,7 +14,7 @@ const { chromium } = require('playwright');
     'browserstack.accessKey': 'YOUR_ACCESS_KEY'
   };
   const browser = await chromium.connect({
-    wsEndpoint: `wss://${caps["browserstack.username"]}:${caps["browserstack.accessKey"]}@cdp.browserstack.com/playwright?caps=${encodeURIComponent(JSON.stringify(caps))}`,
+    wsEndpoint: `wss://cdp.browserstack.com/playwright?caps=${encodeURIComponent(JSON.stringify(caps))}`,
   });
   const page = await browser.newPage();
   await page.goto('http://localhost:45454');
