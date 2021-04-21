@@ -10,7 +10,7 @@ const { chromium, devices } = require('playwright');
   const caps = {
   	'browser': 'chrome',
     'name': 'Test on Playwright emulated Pixel 5',
-    'build': 'playwright-build-5',
+    'build': 'playwright-build-4',
     'browserstack.username': 'YOUR_USERNAME',
     'browserstack.accessKey': 'YOUR_ACCESS_KEY'
   };
