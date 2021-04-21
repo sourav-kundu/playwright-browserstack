@@ -47,13 +47,15 @@ BrowserStack Playwright tests in beta supports the following browsers across the
 2. Firefox (`'browser': 'firefox'`)
 3. Safari (`'browser': 'safari'`)
 
+**Note**: Chrome, Firefox and Safari versions are not specified because Playwright comes with patched browsers and hence browser version is not applicable for running Playwright tests on BrowserStack.
+
 ### OS (with versions) supported
 1. Windows 10 (`'os': 'Windows', 'os_version': '10'`)
 2. macOS Big Sur (`'os': 'osx', 'os_version': 'Big Sur'`)
 3. macOS Catalina (`'os': 'osx', 'os_version': 'Catalina'`)
 4. macOS Mojave (`'os': 'osx', 'os_version': 'Mojave'`)
 
-**Note**: Chrome, Firefox and Safari versions are not specified because Playwright comes with patched browsers and hence browser version is not applicable for running Playwright tests on BrowserStack.
+**Note: You can also run your tests in any of the mobile `devices` that Playwright supports for emulation. You can find the [sample code for running in an iPhone emulator](https://github.com/sourav-kundu/playwright-browserstack/blob/master/sample_test_on_iPhone.js) and the [sample for running on Pixel](https://github.com/sourav-kundu/playwright-browserstack/blob/master/sample_test_on_Pixel.js). The complete list of `devices` supported by Playwright can be found [here](https://github.com/microsoft/playwright/blob/master/src/server/deviceDescriptors.js)**
 
 ### Playwright versions supported
 
