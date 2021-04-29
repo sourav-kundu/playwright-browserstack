@@ -13,7 +13,13 @@ const main = async (cap) => {
     await element.press('Enter');
     const title = await page.title('');
     console.log(title);
-    expect(title).to.equal("BrowserStack - Google Search", 'Expected page title is incorrect!');
+    try {
+        expect(title).to.equal("BrowserStack - Google Search", 'Expected page title is incorrect!');
+        // following line of code is responsible for marking the status of the test on BrowserStack as 'passed'. You can use this code in your after hook after each test
+        await page.evaluate(_ => {}, `browserstack_executor: ${JSON.stringify({action: 'setSessionStatus',arguments: {status: 'passed',reason: 'Title matched'}})}`);
+      } catch {
+        await page.evaluate(_ => {}, `browserstack_executor: ${JSON.stringify({action: 'setSessionStatus',arguments: {status: 'failed',reason: 'Title did not match'}})}`);
+      }
     await browser.close();
 };
 
