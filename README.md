@@ -45,7 +45,9 @@ BrowserStack Playwright tests in beta supports the following browsers across the
 ### Browsers supported
 1. Chrome (`'browser': 'chrome'`)
 2. Firefox (`'browser': 'firefox'`)
-3. Safari (`'browser': 'safari'`)
+3. Safari (`'browser': 'safari'`) - this is basically Webkit
+
+**The browser version that will be used to run your test is the same that comes bundled with the Playwright version**. Supported Playwright versions and the option to specify them is given in a later section of this page.
 
 **Note**: You can also run your tests in any of the mobile `devices` that Playwright supports for emulation. You can find the [sample code for running in an iPhone emulator](https://github.com/sourav-kundu/playwright-browserstack/blob/master/sample_test_on_iPhone.js) and the [sample for running on Pixel](https://github.com/sourav-kundu/playwright-browserstack/blob/master/sample_test_on_Pixel.js). The complete list of `devices` supported by Playwright can be found [here](https://github.com/microsoft/playwright/blob/master/src/server/deviceDescriptors.js)
 
@@ -57,8 +59,8 @@ BrowserStack Playwright tests in beta supports the following browsers across the
 
 ### Playwright versions supported
 
-Currently, we are supporting 2 Playwright versions viz. `1.9.0` and `1.8.0`
-Playwright version can be specified using a capability as: `'browserstack.playwrightVersion': '1.9.0'`
+Currently, we are supporting 2 Playwright versions viz. `1.10.0` and `1.9.0`.
+Playwright version can be specified using a capability as: `'browserstack.playwrightVersion': '1.10.0'`. If you do not specify a value for this capability then your tests would run on the default version `1.10.0`.
 
 ## Facing issues?
 
