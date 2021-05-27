@@ -11,7 +11,8 @@ const caps = {
   'name': 'Codecept test using Playwright',
   'build': 'CodeceptJS on BrowserStack',
   'browserstack.username': 'YOUR_USERNAME',
-  'browserstack.accessKey': 'YOUR_ACCESS_KEY'
+  'browserstack.accessKey': 'YOUR_ACCESS_KEY',
+  'client.playwrightVersion': 'Your locally installed Playwright version'  // example '1.11.0'
 };
 
 exports.config = {
