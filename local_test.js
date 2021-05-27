@@ -2,6 +2,9 @@
 const expect = require('chai').expect
 const { chromium } = require('playwright');
 
+const packageJson = require('./package.json');
+const clientPlaywrightVersion = packageJson['devDependencies']['playwright'].substring(1);
+
 (async () => {
   const caps = {
   	'browser': 'chrome',
@@ -11,7 +14,8 @@ const { chromium } = require('playwright');
     'build': 'playwright-build-3',
     'browserstack.local': 'true',
     'browserstack.username': 'YOUR_USERNAME',
-    'browserstack.accessKey': 'YOUR_ACCESS_KEY'
+    'browserstack.accessKey': 'YOUR_ACCESS_KEY',
+    'client.playwrightVersion': clientPlaywrightVersion  // Playwright version being used on your local project needs to be passed in this capability for BrowserStack to be able to map request and responses correctly
   };
   const browser = await chromium.connect({
     wsEndpoint: `wss://cdp.browserstack.com/playwright?caps=${encodeURIComponent(JSON.stringify(caps))}`,

@@ -21,6 +21,10 @@ You have to replace `YOUR_USERNAME` and `YOUR_ACCESS_KEY` in the sample scripts 
 2. Install the dependencies using `npm install`
 3. Run the sample script using `node google_search.js`
 
+**Important Note**: When you try to run your Playwright tests on BrowserStack, you need to pass your locally installed client Playwright version in the capability `client.playwrightVersion`. This is required because it is often possible that your locally installed version might be different than the server version running on BrowserStack and the mismatch could lead to different request/response formats leading to socket errors.
+
+Playwright does not pass the client version information in the `connect` request yet and hence this capability is required to let BrowserStack know about your locally installed version, to avoid any error scenarios arising from this. **This has already been taken care in the sample scripts under this repository**.
+
 ## Run cross-browser tests in parallel
 
 1. Clone this repository
