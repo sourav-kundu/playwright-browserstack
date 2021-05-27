@@ -4,6 +4,9 @@ const { setHeadlessWhen } = require('@codeceptjs/configure');
 // export HEADLESS=true && npx codeceptjs run
 setHeadlessWhen(process.env.HEADLESS);
 
+const packageJson = require('./package.json');
+const clientPlaywrightVersion = packageJson['devDependencies']['playwright'].substring(1);
+
 const caps = {
   'browser': 'chrome',
   'os': 'osx',
@@ -12,7 +15,7 @@ const caps = {
   'build': 'CodeceptJS on BrowserStack',
   'browserstack.username': 'YOUR_USERNAME',
   'browserstack.accessKey': 'YOUR_ACCESS_KEY',
-  'client.playwrightVersion': 'Your locally installed Playwright version'  // example '1.11.0'
+  'client.playwrightVersion': clientPlaywrightVersion  // example '1.11.0'
 };
 
 exports.config = {
