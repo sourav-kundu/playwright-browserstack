@@ -66,6 +66,17 @@ BrowserStack Playwright tests in beta supports the following browsers across the
 Currently, we are supporting 2 Playwright versions viz. `1.10.0` and `1.9.0`.
 Playwright version can be specified using a capability as: `'browserstack.playwrightVersion': '1.10.0'`. If you do not specify a value for this capability then your tests would run on the default version `1.10.0`.
 
+## Playwright with Jest
+
+If you are using Jest to run your Playwright tests, you can run all your playwright-jest tests on BrowserStack as well. Follow the steps below to run the sample tests in this repository:
+
+1. Clone this repository using `git clone https://github.com/sourav-kundu/playwright-browserstack.git` (if not already done).
+2. Go inside the directory playwright-jest using `cd playwright-jest`
+3. Install the dependencies using `npm install`
+4. Put in your credentials in the file `jest-playwright.config.js` in the capabilities part.
+5. If you are trying to run your own Jest tests on BrowserStack, then you need to ensure that you have configured the `connectOptions` and `browsers` as shown in the `module.exports` of the config file.
+6. Run the sample jest script using `npm test` which runs the test `google.test.js` across 3 browsers in BrowserStack serially. Your can also configure Jest to run your tests in parallel.
+
 ## Facing issues?
 
 If you are facing any issue with any of the above or any other issue in trying to run your Playwright tests on BrowserStack, you can reach out to me directly at `sourav.k@browserstack.com` and I will be happy to debug your issues or at the least ensure that your issue becomes our top priority to resolve.
