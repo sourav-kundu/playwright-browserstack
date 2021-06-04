@@ -73,7 +73,6 @@ If you are using Jest to run your Playwright tests, you can run all your playwri
 1. Clone this repository using `git clone https://github.com/sourav-kundu/playwright-browserstack.git` (if not already done).
 2. Go inside the directory playwright-jest using `cd playwright-jest`
 3. Install the dependencies using `npm install`
-4. Put in your credentials in the file `jest-playwright.config.js` in the capabilities part.
 5. If you are trying to run your own Jest tests on BrowserStack, then you need to ensure that you have configured the `connectOptions` and `browsers` as shown in the `module.exports` of the config file.
 6. Run the sample jest script using `npm test` which runs the test `google.test.js` across 3 browsers in BrowserStack serially. Your can also configure Jest to run your tests in parallel.
 
