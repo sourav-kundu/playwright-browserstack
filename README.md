@@ -13,7 +13,7 @@ You need BrowserStack credentials to be able to run Playwright tests and also yo
 
 If you have already been included in the beta group, proceed ahead. Else, you can [reach out to support](https://www.browserstack.com/contact#technical-support) to get included in the beta group.
 
-You have to replace `YOUR_USERNAME` and `YOUR_ACCESS_KEY` in the sample scripts in this repository with your BrowserStack credentials which can be found in your [Account Settings](https://www.browserstack.com/accounts/settings) page.
+You have to set environment variables `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY`. The values should be your BrowserStack credentials, which can be found in your [Account Settings](https://www.browserstack.com/accounts/settings) page.
 
 ## Run your first Playwright test on BrowserStack
 
@@ -38,7 +38,7 @@ Playwright does not pass the client version information in the `connect` request
    * [Linux 32-bit](https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-ia32.zip)
    * [Linux 64-bit](https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip)
    * [Windows (XP and above)](https://www.browserstack.com/browserstack-local/BrowserStackLocal-win32.zip)
-2. Once you have downloaded and unzipped the file, you can initiate the binary by running the command: `./BrowserStackLocal --key YOUR_ACCESS_KEY`
+2. Once you have downloaded and unzipped the file, you can initiate the binary by running the command: `./BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY`
 3. Once you see the terminal say “\[SUCCESS\] You can now access your local server(s) in our remote browser”, your local testing connection is considered established.
 4. You can then run the sample Local test using `node local_test.js`
 

@@ -13,8 +13,8 @@ const clientPlaywrightVersion = packageJson['devDependencies']['playwright'].sub
     'name': 'Playwright sample Local test',
     'build': 'playwright-build-3',
     'browserstack.local': 'true',
-    'browserstack.username': 'YOUR_USERNAME',
-    'browserstack.accessKey': 'YOUR_ACCESS_KEY',
+    'browserstack.username': process.env.BROWSERSTACK_USERNAME,
+    'browserstack.accessKey': process.env.BROWSERSTACK_ACCESS_KEY,
     'client.playwrightVersion': clientPlaywrightVersion  // Playwright version being used on your local project needs to be passed in this capability for BrowserStack to be able to map request and responses correctly
   };
   const browser = await chromium.connect({
