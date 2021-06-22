@@ -66,6 +66,12 @@ BrowserStack Playwright tests in beta supports the following browsers across the
 Currently, we are supporting 2 Playwright versions viz. `1.10.0` and `1.9.0`.
 Playwright version can be specified using a capability as: `'browserstack.playwrightVersion': '1.10.0'`. If you do not specify a value for this capability then your tests would run on the default version `1.10.0`.
 
+## Get Playwright session details
+
+While your Playwright session runs on BrowserStack, we generate a unique ID for the session, build and also generate URLs for the various types of logs which you can use to build your own reporting or for any other purpose that you might like.
+
+A sample script with the use of the API to fetch all the relevant session details is shown in the [sample_session_details_API.js](./sample_session_details_API.js).
+
 ## Playwright with Jest
 
 If you are using Jest to run your Playwright tests, you can run all your playwright-jest tests on BrowserStack as well. Follow the steps below to run the sample tests in this repository:

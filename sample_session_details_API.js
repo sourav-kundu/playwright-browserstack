@@ -34,10 +34,15 @@ const clientPlaywrightVersion = packageJson['devDependencies']['playwright'].sub
   } catch {
     await page.evaluate(_ => {}, `browserstack_executor: ${JSON.stringify({action: 'setSessionStatus',arguments: {status: 'failed',reason: 'Title did not match'}})}`);
   }
-  const randomStr = `browserstack_executor: ${JSON.stringify({
-    action: 'getSessionDetails'
-  })}`;
-  const resp = await page.evaluate(_ => {}, randomStr);
-  console.log(resp);
+
+  /* 
+  *  The following part of the code uses the getSessionDetails API to get all the relevant details about the running playwright session.
+  *  You can use all these details after your test has completed, to fetch logs or use any other Automate REST APIs
+  */
+  const resp = await JSON.parse(await page.evaluate(_ => {}, `browserstack_executor: ${JSON.stringify({action: 'getSessionDetails'})}`));
+  const jsonObj = await JSON.parse(resp);
+  console.log(jsonObj.hashed_id);  // This gives the session ID of the running session
+  console.log(jsonObj);  // This prints the entire JSON response. You can use any/all of the response attributes the way you like.
+  
   await browser.close();
 })();
