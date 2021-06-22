@@ -70,7 +70,9 @@ Playwright version can be specified using a capability as: `'browserstack.playwr
 
 While your Playwright session runs on BrowserStack, we generate a unique ID for the session, build and also generate URLs for the various types of logs which you can use to build your own reporting or for any other purpose that you might like.
 
-A sample script with the use of the API to fetch all the relevant session details is shown in the [sample_session_details_API.js](./sample_session_details_API.js).
+A sample script with the use of the API to fetch all the relevant session details is shown in the [sample_session_details_API.js](./sample_session_details_API.js). 
+
+You can see the [documentation for marking test status using REST API](https://www.browserstack.com/docs/automate/api-reference/selenium/session#set-test-status) using the session ID for the session, any time even after the session has completed its execution.
 
 ## Playwright with Jest
 
