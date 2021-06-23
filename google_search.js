@@ -34,10 +34,5 @@ const clientPlaywrightVersion = packageJson['devDependencies']['playwright'].sub
   } catch {
     await page.evaluate(_ => {}, `browserstack_executor: ${JSON.stringify({action: 'setSessionStatus',arguments: {status: 'failed',reason: 'Title did not match'}})}`);
   }
-  const randomStr = `browserstack_executor: ${JSON.stringify({
-    action: 'getSessionDetails'
-  })}`;
-  const resp = await page.evaluate(_ => {}, randomStr);
-  console.log(resp);
   await browser.close();
 })();
