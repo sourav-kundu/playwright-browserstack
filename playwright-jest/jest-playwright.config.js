@@ -1,5 +1,5 @@
-const packageJson = require('./package.json');
-const clientPlaywrightVersion = packageJson['devDependencies']['playwright'].substring(1);
+const cp = require('child_process');
+const clientPlaywrightVersion = cp.execSync('npx playwright --version').toString().trim().split(' ')[1];
 
 const caps_chromium = {
     'browser': 'chrome',
