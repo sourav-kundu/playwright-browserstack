@@ -6,9 +6,12 @@ const clientPlaywrightVersion = cp.execSync('npx playwright --version').toString
 
 const main = async (cap) => {
     cap['client.playwrightVersion'] = clientPlaywrightVersion;  // Playwright version being used on your local project needs to be passed in this capability for BrowserStack to be able to map request and responses correctly
+    cap['browserstack.username'] = process.env.BROWSERSTACK_USERNAME || 'YOUR_USERNAME';
+    cap['browserstack.accessKey'] = process.env.BROWSERSTACK_ACCESS_KEY || 'YOUR_ACCESS_KEY';
+    
     console.log("Starting test -->", cap['name']);
     const browser = await chromium.connect({
-        wsEndpoint: `wss://YOUR_USERNAME:YOUR_ACCESS_KEY@cdp.browserstack.com/playwright?caps=${encodeURIComponent(JSON.stringify(cap))}`,
+        wsEndpoint: `wss://cdp.browserstack.com/playwright?caps=${encodeURIComponent(JSON.stringify(cap))}`,
     });
     const page = await browser.newPage();
     await page.goto('https://www.google.com/ncr');
