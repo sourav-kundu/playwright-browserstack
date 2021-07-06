@@ -15,6 +15,8 @@ If you have already been included in the beta group, proceed ahead. Else, you ca
 
 You have to replace `YOUR_USERNAME` and `YOUR_ACCESS_KEY` in the sample scripts in this repository with your BrowserStack credentials which can be found in your [Account Settings](https://www.browserstack.com/accounts/settings) page.
 
+**Alternatively, you can set the environment variables `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` with your credentials and all the scripts in this repository should work fine**
+
 ## Run your first Playwright test on BrowserStack
 
 1. Clone this repository
