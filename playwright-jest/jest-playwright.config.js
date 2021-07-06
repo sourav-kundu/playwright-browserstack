@@ -7,8 +7,8 @@ const caps_chromium = {
     'os_version': 'big sur',
     'name': 'Playwright-jest test on Chromium',
     'build': 'playwright-jest-build-1',
-    'browserstack.username': 'YOUR_USERNAME',
-    'browserstack.accessKey': 'YOUR_ACCESS_KEY',
+    'browserstack.username': process.env.BROWSERSTACK_USERNAME,
+    'browserstack.accessKey': process.env.BROWSERSTACK_ACCESS_KEY,
     'client.playwrightVersion': clientPlaywrightVersion
 };
 
@@ -18,8 +18,8 @@ const caps_firefox = {
     'os_version': 'big sur',
     'name': 'Playwright-jest test on Firefox',
     'build': 'playwright-jest-build-1',
-    'browserstack.username': 'YOUR_USERNAME',
-    'browserstack.accessKey': 'YOUR_ACCESS_KEY',
+    'browserstack.username': process.env.BROWSERSTACK_USERNAME,
+    'browserstack.accessKey': process.env.BROWSERSTACK_ACCESS_KEY,
     'client.playwrightVersion': clientPlaywrightVersion
 };
 
@@ -29,8 +29,8 @@ const caps_webkit = {
     'os_version': 'big sur',
     'name': 'Playwright-jest test on Webkit',
     'build': 'playwright-jest-build-1',
-    'browserstack.username': 'YOUR_USERNAME',
-    'browserstack.accessKey': 'YOUR_ACCESS_KEY',
+    'browserstack.username': process.env.BROWSERSTACK_USERNAME,
+    'browserstack.accessKey': process.env.BROWSERSTACK_ACCESS_KEY,
     'client.playwrightVersion': clientPlaywrightVersion
 };
 

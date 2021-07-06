@@ -15,8 +15,8 @@ const clientPlaywrightVersion = cp.execSync('npx playwright --version').toString
   	'browser': 'safari',
     'name': 'Test on Playwright emulated iPhone 11 Pro',
     'build': 'playwright-build-4',
-    'browserstack.username': 'YOUR_USERNAME',
-    'browserstack.accessKey': 'YOUR_ACCESS_KEY',
+    'browserstack.username': process.env.BROWSERSTACK_USERNAME,
+    'browserstack.accessKey': process.env.BROWSERSTACK_ACCESS_KEY,
     'client.playwrightVersion': clientPlaywrightVersion  // Playwright version being used on your local project needs to be passed in this capability for BrowserStack to be able to map request and responses correctly
   };
   const browser = await chromium.connect({

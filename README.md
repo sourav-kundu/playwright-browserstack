@@ -13,7 +13,7 @@ You need BrowserStack credentials to be able to run Playwright tests and also yo
 
 If you have already been included in the beta group, proceed ahead. Else, you can [reach out to support](https://www.browserstack.com/contact#technical-support) to get included in the beta group.
 
-You have to replace `YOUR_USERNAME` and `YOUR_ACCESS_KEY` in the sample scripts in this repository with your BrowserStack credentials which can be found in your [Account Settings](https://www.browserstack.com/accounts/settings) page.
+You have to set environment variables `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY`. The values should be your BrowserStack credentials, which can be found in your [Account Settings](https://www.browserstack.com/accounts/settings) page.
 
 ## Run your first Playwright test on BrowserStack
 
@@ -38,7 +38,7 @@ Playwright does not pass the client version information in the `connect` request
    * [Linux 32-bit](https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-ia32.zip)
    * [Linux 64-bit](https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip)
    * [Windows (XP and above)](https://www.browserstack.com/browserstack-local/BrowserStackLocal-win32.zip)
-2. Once you have downloaded and unzipped the file, you can initiate the binary by running the command: `./BrowserStackLocal --key YOUR_ACCESS_KEY`
+2. Once you have downloaded and unzipped the file, you can initiate the binary by running the command: `./BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY`
 3. Once you see the terminal say “\[SUCCESS\] You can now access your local server(s) in our remote browser”, your local testing connection is considered established.
 4. You can then run the sample Local test using `node local_test.js`
 
@@ -83,7 +83,6 @@ If you are using Jest to run your Playwright tests, you can run all your playwri
 1. Clone this repository using `git clone https://github.com/sourav-kundu/playwright-browserstack.git` (if not already done).
 2. Go inside the directory playwright-jest using `cd playwright-jest`
 3. Install the dependencies using `npm install`
-4. Put in your credentials in the file `jest-playwright.config.js` in the capabilities part.
 5. If you are trying to run your own Jest tests on BrowserStack, then you need to ensure that you have configured the `connectOptions` and `browsers` as shown in the `module.exports` of the config file.
 6. Run the sample jest script using `npm test` which runs the test `google.test.js` across 3 browsers in BrowserStack serially. Your can also configure Jest to run your tests in parallel.
 
