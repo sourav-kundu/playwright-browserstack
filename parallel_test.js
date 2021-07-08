@@ -34,45 +34,40 @@ const main = async (cap) => {
 //  The following capabilities array contains the list of os/browser environments where you want to run your tests. You can choose to alter this list according to your needs
 const capabilities = [
 {
-  	'browser': 'chrome',
+  	'browser': 'chrome',  // allowed browsers are `chrome`, `edge`, `playwright-chromium`, `playwright-firefox` and `playwright-webkit`
+    'browser_version': 'latest', // this capability is valid only for branded `chrome` and `edge` browsers and you can specify any browser version like `latest`, `latest-beta`, `latest-1` and so on.
     'os': 'osx',
     'os_version': 'catalina',
-    'name': 'Chrome on Catalina',
+    'name': 'Branded Google Chrome on Catalina',
     'build': 'playwright-build-2'
 },
 {
-  	'browser': 'firefox',
+  'browser': 'edge',  // allowed browsers are `chrome`, `edge`, `playwright-chromium`, `playwright-firefox` and `playwright-webkit`
+  'browser_version': 'latest', // this capability is valid only for branded `chrome` and `edge` browsers and you can specify any browser version like `latest`, `latest-beta`, `latest-1` and so on.
+  'os': 'osx',
+  'os_version': 'catalina',
+  'name': 'Branded Microsoft Edge on Catalina',
+  'build': 'playwright-build-2'
+},
+{
+  	'browser': 'playwright-firefox',  // allowed browsers are `chrome`, `edge`, `playwright-chromium`, `playwright-firefox` and `playwright-webkit`
     'os': 'osx',
     'os_version': 'catalina',
-    'name': 'Firefox on Catalina',
+    'name': 'Playwright firefox on Catalina',
     'build': 'playwright-build-2'
 },
 {
-  	'browser': 'safari',
+  	'browser': 'playwright-webkit',  // allowed browsers are `chrome`, `edge`, `playwright-chromium`, `playwright-firefox` and `playwright-webkit`
     'os': 'osx',
     'os_version': 'catalina',
-    'name': 'Safari on Catalina',
+    'name': 'Playwright webkit on Catalina',
     'build': 'playwright-build-2'
 },
 {
-    'browser': 'chrome',
-    'os': 'Windows',
-    'os_version': '10',
+    'browser': 'playwright-chromium',  // allowed browsers are `chrome`, `edge`, `playwright-chromium`, `playwright-firefox` and `playwright-webkit`
+    'os': 'osx',
+    'os_version': 'Catalina',
     'name': 'Chrome on Win10',
-    'build': 'playwright-build-2'
-},
-{
-    'browser': 'firefox',
-    'os': 'Windows',
-    'os_version': '10',
-    'name': 'Firefox on Win10',
-    'build': 'playwright-build-2'
-},
-{
-    'browser': 'safari',
-    'os': 'Windows',
-    'os_version': '10',
-    'name': 'Safari on Win10',
     'build': 'playwright-build-2'
 }]
 

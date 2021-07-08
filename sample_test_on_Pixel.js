@@ -12,7 +12,7 @@ const clientPlaywrightVersion = cp.execSync('npx playwright --version').toString
   * The credentials also need to be part of the caps as 'browserstack.username' and 'browserstack.accessKey'
   */
   const caps = {
-  	'browser': 'chrome',
+  	'browser': 'playwright-chromium',  // allowed browsers are `chrome`, `edge`, `playwright-chromium`, `playwright-firefox` and `playwright-webkit`
     'name': 'Test on Playwright emulated Pixel 5',
     'build': 'playwright-build-4',
     'browserstack.username': process.env.BROWSERSTACK_USERNAME || 'YOUR_USERNAME',
