@@ -2,7 +2,7 @@ const cp = require('child_process');
 const clientPlaywrightVersion = cp.execSync('npx playwright --version').toString().trim().split(' ')[1];
 
 const caps_chromium = {
-    'browser': 'playwright-chromium', // allowed browsers are `chrome`, `edge`, `playwright-chromium`, `playwright-firefox` and `playwright-webkit`
+    'browser': 'chrome',
     'os': 'osx',
     'os_version': 'big sur',
     'name': 'Playwright-jest test on Chromium',
@@ -13,7 +13,7 @@ const caps_chromium = {
 };
 
 const caps_firefox = {
-    'browser': 'playwright-firefox', // allowed browsers are `chrome`, `edge`, `playwright-chromium`, `playwright-firefox` and `playwright-webkit`
+    'browser': 'firefox',
     'os': 'osx',
     'os_version': 'big sur',
     'name': 'Playwright-jest test on Firefox',
@@ -24,7 +24,7 @@ const caps_firefox = {
 };
 
 const caps_webkit = {
-    'browser': 'playwright-webkit', // allowed browsers are `chrome`, `edge`, `playwright-chromium`, `playwright-firefox` and `playwright-webkit`
+    'browser': 'safari',
     'os': 'osx',
     'os_version': 'big sur',
     'name': 'Playwright-jest test on Webkit',

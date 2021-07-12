@@ -8,7 +8,7 @@ const cp = require('child_process');
 const clientPlaywrightVersion = cp.execSync('npx playwright --version').toString().trim().split(' ')[1];
 
 const caps = {
-  'browser': 'chrome', // allowed browsers are `chrome`, `edge`, `playwright-chromium`, `playwright-firefox` and `playwright-webkit`
+  'browser': 'chrome',
   'os': 'osx',
   'os_version': 'catalina',
   'name': 'Codecept test using Playwright',
