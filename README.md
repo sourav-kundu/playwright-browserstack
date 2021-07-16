@@ -54,8 +54,10 @@ BrowserStack Playwright tests in beta supports the following browsers across the
 3. Bundled Webkit with Playwright (`'browser': 'playwright-webkit'`)
 4. Branded Google Chrome (`'browser': 'chrome'`)
    * You can test on multiple versions of branded Google Chrome using another capability `'browser_version': 'latest'`. Supported options are `latest`, `latest-beta`, `latest-1` and so on.
+   * We would be supporting Chrome v83 and above. You can also specify `browser_version` as `88` or `91` and so on.
 5. Branded Microsoft Edge (`'browser': 'edge'`)
    * You can test on multiple versions of branded Microsoft Edge using another capability `'browser_version': 'latest'`. Supported options are `latest`, `latest-beta`, `latest-1` and so on.
+   * We would be supporting Edge v83 and above. You can also specify `browser_version` as `88` or `91` and so on.
 
 **The bundled browser version that will be used to run your test is the same that comes bundled with the Playwright version**. Supported Playwright versions and the option to specify them is given in a later section of this page.
 
