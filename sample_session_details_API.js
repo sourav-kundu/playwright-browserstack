@@ -7,7 +7,7 @@ const clientPlaywrightVersion = cp.execSync('npx playwright --version').toString
 
 (async () => {
   const caps = {
-  	'browser': 'chrome',
+  	'browser': 'playwright-chromium',  // allowed browsers are `chrome`, `edge`, `playwright-chromium`, `playwright-firefox` and `playwright-webkit`
     'os': 'osx',
     'os_version': 'catalina',
     'name': 'My first playwright test',
