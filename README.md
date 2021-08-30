@@ -1,5 +1,5 @@
 # playwright-browserstack
-Sample Playwright tests to run on BrowserStack
+This sample repository is no longer being maintained. Please refer to [playwright-browserstack official BrowserStack repository](https://github.com/browserstack/playwright-browserstack)
 
 ## Introduction
 
